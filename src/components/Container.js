@@ -32,30 +32,11 @@ function Container() {
         }
     }
 
-    console.log(doMath())
-
     function doMath(input1, input2){
-        if(operator === '+') { console.log('Add') }
-        if(operator === '-') { console.log('Subtract') }
-        if(operator === '/') { console.log('Divide') }
-        if(operator === '*') { console.log('Multiply') }
-    }
-
-    function add(input1, input2){
-        return input1 + input2;
-    }
-
-    function subtract(input1, input2){
-        return input1 - input2;
-    }
-
-
-    function multiply(input1, input2){
-        return input1 - input2;
-    }
-
-    function divide(input1, input2){
-        return input1 - input2;
+        if(operator === '+') { return input1 + input2 }
+        if(operator === '-') { return input1 - input2 }
+        if(operator === '/') { return input1 / input2 }
+        if(operator === '*') { return input1 * input2 }
     }
    
   return (
@@ -65,7 +46,7 @@ function Container() {
         value2={input2} 
         operator={operator}
         onChange={(e)=>handleInputChange(e)} 
-        total={add(parseInt(input1), parseInt( input2))}
+        total={doMath(parseInt(input1), parseInt( input2))}
         // total={operatorChange(parseInt(input1), parseInt( input2))}
 
         operatorChange={(e)=>operatorChange(e)}
